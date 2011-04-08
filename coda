@@ -6,19 +6,18 @@ codapath = ENV['CODAPATH'] if ENV['CODAPATH']
 cmd = ARGV[0]
 
 if !cmd
-	puts "Call 'coda filename' to open a file with coda"
-	exit
+  puts "Call 'coda filename' to open a file with coda"
+  exit
 end
 
 if cmd == 'h'
-	puts "Call 'coda filename' to open a file with coda"
-	exit
+  puts "Call 'coda filename' to open a file with coda"
+  exit
 end
 
 if !File.exists? cmd
-	puts "touch #{cmd}"
-	system "touch #{cmd}"
+  puts "touch #{cmd}"
+  system "touch #{cmd}"
 end
-
 
 system "open -a #{codapath} #{cmd}"
